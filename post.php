@@ -2,9 +2,9 @@
   session_start();
   //データを変数に代入
   //サニタイズ処理
-  $title = $_POST['title'];
-  $category = $_POST['category'];
-  $message = $_POST['message'];
+  $title = htmlspecialchars($_POST['title'], ENT_QUOTES, 'utf-8');
+  $category = htmlspecialchars($_POST['category'], ENT_QUOTES, 'utf-8');
+  $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'utf-8');
 
   //DBに保存　DBに接続して、データを挿入
   try{
