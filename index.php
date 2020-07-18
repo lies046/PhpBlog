@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
   <html lang="ja">
   <head>
@@ -19,6 +20,11 @@
     </div>
 
     <div id="main">
+      <?php if(!empty($_SESSION['success'])) :?>
+        <div class="alert alert-success" role="alert">
+          <?php echo $_SESSION['success']; ?>
+        </div>
+      <?php endif ; ?>
       <form method="POST" action="post.php">
         <div class="form-group">
           <label for="exampleFormControlInput1">タイトル</label>

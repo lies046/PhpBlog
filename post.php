@@ -1,6 +1,7 @@
 <?php
-
+  session_start();
   //データを変数に代入
+  //サニタイズ処理
   $title = $_POST['title'];
   $category = $_POST['category'];
   $message = $_POST['message'];
@@ -23,4 +24,5 @@
   $stt->bindValue(':message', $message);
   $stt->execute();
 
+  $_SESSION['success'] = "記事の投稿が完了しました。";
   header('Location: index.php');
