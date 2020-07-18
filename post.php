@@ -17,8 +17,10 @@
     print $e;
   }
 
-  $stt = $db->prepare('INSERT INTO post(title, category, post) VALUE(:title, :category, :message)');
+  $stt = $db->prepare('INSERT INTO post(title, category, post) VALUES(:title, :category, :message)');
   $stt->bindValue(':title', $title);
   $stt->bindValue(':category', $category);
   $stt->bindValue(':message', $message);
   $stt->execute();
+
+  header('Location: index.php');

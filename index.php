@@ -22,7 +22,7 @@
       <form method="POST" action="post.php">
         <div class="form-group">
           <label for="exampleFormControlInput1">タイトル</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1"　name="title">
+          <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
         </div>
         <div class="form-group">
           <label for="exampleFormControlSelect1">カテゴリー</label>
