@@ -25,7 +25,11 @@
     <tbody>
     <tr>
       <th scope="row"><?php echo $s->f($value['id']); ?></th>
-      <td><?php echo $s->f($value['title']); ?></td>
+      <td>
+        <a href="edit.php?id=<?php echo $s->f($value['id']) ?>">
+          <?php echo $s->f($value['title']); ?>
+        <a>
+      </td>
       <td><?php echo $s->f($value['created_at']); ?></td>
     </tr>
     <?php endforeach; ?>
