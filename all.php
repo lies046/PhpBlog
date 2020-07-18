@@ -3,6 +3,8 @@
 
       //DBから記事一覧を取得　DBに接続して取得
       require_once 'functions/Dbmanager.php';
+      require_once 'functions/Security.php';
+      $s = new Security();
       $db = Db();
       $stt = $db->prepare('SELECT * FROM post');
       $stt->execute();
@@ -22,9 +24,9 @@
     <?php foreach ($row as $value) : ?>
     <tbody>
     <tr>
-      <th scope="row"><?php echo $value['id']; ?></th>
-      <td><?php echo $value['title']; ?></td>
-      <td><?php echo $value['created_at']; ?></td>
+      <th scope="row"><?php echo $s->f($value['id']); ?></th>
+      <td><?php echo $s->f($value['title']); ?></td>
+      <td><?php echo $s->f($value['created_at']); ?></td>
     </tr>
     <?php endforeach; ?>
   </tbody>

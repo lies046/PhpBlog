@@ -2,12 +2,13 @@
   session_start();
 
   require_once 'functions/DbManager.php';
-
+  require_once 'functions/Security.php';
   //データを変数に代入
   //サニタイズ処理
-  $title = htmlspecialchars($_POST['title'], ENT_QUOTES, 'utf-8');
-  $category = htmlspecialchars($_POST['category'], ENT_QUOTES, 'utf-8');
-  $message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'utf-8');
+  $s = new Security();
+  $title = $s->f($_POST['title']);
+  $category = $s->f($_POST['category']);
+  $message = $s->f($_POST['message']);
 
   //DBに保存　DBに接続して、データを挿入 
   $db = Db();
