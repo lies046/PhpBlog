@@ -1,0 +1,24 @@
+.clear{
+  clear: both;
+}
+#sidebar{
+  background: #006400;
+  width: 20%;
+  float: left;
+  height: 100vh;
+}
+
+#sidebar ul li{
+  list-style: none;
+  margin-top: 15px;
+}
+
+#sidebar ul li a{
+  color: #fff;
+}
+
+#main{
+  width: 80%;
+  float: left;
+  padding: 20px;
+}
